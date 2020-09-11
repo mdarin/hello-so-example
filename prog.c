@@ -2,10 +2,13 @@
 #include <stdlib.h>
 #include <math.h> 
 
+// move to headers
 void ctest1(int *);
 void ctest2(int *);
 double ctest3(double , double );
+double ctest4(double, double); 
 
+// usage
 int main(void)
 {
 	int x = 0;
@@ -15,6 +18,8 @@ int main(void)
 	printf("ctest2() -> %d\n", x);
 	double power = ctest3(2.0, 2.0);
 	printf("ctest3() -> %f\n", power);
+	power = ctest4(3.0, 3.0);
+	printf("ctest4() -> %f\n", power);
 	return 0;
 }
 

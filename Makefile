@@ -12,12 +12,12 @@ prog: shared install
 # Generate the shared library: 
 #		gcc -shared -Wl,-soname,libctest.so.1 -o libctest.so.1.0 ctest1.o ctest2.o
 shared: lib
-	@gcc -shared -Wl,-soname,libctest.so.1 -o libctest.so.1.0 ctest1.o ctest2.o
+	@gcc -shared -Wl,-soname,libctest.so.1 -o libctest.so.1.0 ctest1.o ctest2.o ctest4.o
 # Compile the library functions: 
 # 	gcc -Wall -fPIC -c ctest1.c ctest2.c
 # This generates the library libctest.so.1.0
 lib:
-	@gcc -Wall -fPIC -c ctest1.c ctest2.c
+	@gcc -Wall -fPIC -c ctest1.c ctest2.c ctest4.c
 
 # Move to lib/ directory:
 #    sudo mv libctest.so.1.0 /opt/lib
