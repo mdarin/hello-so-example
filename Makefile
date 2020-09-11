@@ -2,7 +2,13 @@
 # Dynamically Linked "Shared Object" Libraries: (.so) 
 #
 prog: shared install
-	@gcc -Wall -L. prog.c -lctest -o prog
+	@gcc -Wall prog.c -Wl,-rpath -Wl,. -L. -lctest -lm -o prog 
+
+#	 compile
+#	@gcc -Wall -c prog.c
+#	link	
+#	@gcc -Wl,-rpath -Wl,. -L. -lctest -lm -o prog prog.o 
+
 # Generate the shared library: 
 #		gcc -shared -Wl,-soname,libctest.so.1 -o libctest.so.1.0 ctest1.o ctest2.o
 shared: lib
